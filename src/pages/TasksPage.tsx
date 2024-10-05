@@ -11,7 +11,6 @@ interface WorkspacePageProps {
     toggleMenu: () => void;
 }
 
-
 const TaskPage: React.FC<WorkspacePageProps> = ({toggleMenu}) => {
     const [isModal2Open, setModal2Open] = useState(false);
 

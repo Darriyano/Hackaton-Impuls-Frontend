@@ -36,6 +36,7 @@ const Workspace: React.FC<WorkspacePageProps> = ({toggleMenu}) => {
                     </Link>
                     <div className="naming">{t('workspace.name')} <Link to="/userworkspace" className="custom-link">
                         <div style={{color: '#5C2FC2'}}>Имя Фамилия Отчество</div>
+                        <div style={{color: '#5C2FC2'}}>{process.env.REACT_APP_API_URL}</div>
                     </Link>
                     </div>
 

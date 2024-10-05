@@ -21,7 +21,7 @@ const App: React.FC = () => {
 
             <Routes>
                 <Route path="/" element={<MainPage toggleMenu={toggleMenu}/>}/>
-                <Route path="/domain" element={<DomainPage toggleMenu={toggleMenu}/>}/>
+                <Route path="/domain/:id" element={<DomainPage toggleMenu={toggleMenu}/>}/>
                 <Route path="/vacancies" element={<VacanciesPage toggleMenu={toggleMenu}/>}/>
                 <Route path="/userworkspace" element={<Workspace toggleMenu={toggleMenu}/>}/>
                 <Route path="/usertasks" element={<TaskPage toggleMenu={toggleMenu}/>}/>

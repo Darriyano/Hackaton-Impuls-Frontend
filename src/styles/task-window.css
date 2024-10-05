@@ -61,6 +61,15 @@ textarea {
     resize: none;
 }
 
+.selector{
+    padding: 0.75rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    width: 90%;
+}
+
 .save-button {
     background: linear-gradient(270deg, #8D67D5 0.01%, #5C2FC2 100%);
     color: white;
