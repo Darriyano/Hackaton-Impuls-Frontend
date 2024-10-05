@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import '../styles/vacancy-window.css'
 import {useTranslation} from "react-i18next";
 import {CreateTask, Employee, fetchCreateTask, fetchEmployees} from "../api/create-task";
+import {Domain} from "../api/domain-getter";
 
 interface ModalWindow2Props {
     isOpen: boolean;
@@ -10,25 +11,31 @@ interface ModalWindow2Props {
 
 const TaskModalWindow: React.FC<ModalWindow2Props> = ({isOpen, onClose}) => {
     const {t} = useTranslation();
+    const [employees, setEmployees] = useState<Employee[]>([]);
+    const [domains, setDomains] = useState<Domain[]>([]);
 
     // Состояния для полей формы
     const [title, setTitle] = useState('');
-    const [name, setName] = useState('');
     const [description, setDescription] = useState('');
     const [type, setType] = useState<'CREATE' | 'DELETE'>('CREATE');
     const [priority, setPriority] = useState<'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW'>('MEDIUM');
     const [deadline, setDeadline] = useState('');
     const [hr_id, setHrId] = useState<number[]>([]);
-    const [employees, setEmployees] = useState<Employee[]>([]);
-    const [domain_id, setDomainId] = useState(1);
+    const [domain_id, setDomainId] = useState(0);
 
-    // Получаем список сотрудников всегда при рендере компонента, но условие обработки внутри useEffect
+    const handleDomainChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        setDomainId(Number(e.target.value)); // Обновляем значение domain_id
+    };
+
+    // Получаем список сотрудников и домены всегда при рендере компонента, но условие обработки внутри useEffect
     useEffect(() => {
         if (isOpen) {
             const loadEmployees = async () => {
                 try {
                     const data = await fetchEmployees();
+                    const domains = await fetchEmployees();
                     setEmployees(data);
+                    setDomains(domains);
                 } catch (error) {
                     console.error('Error fetching employees:', error);
                 }
@@ -80,11 +87,11 @@ const TaskModalWindow: React.FC<ModalWindow2Props> = ({isOpen, onClose}) => {
                         type="text"
                         id="name"
                         placeholder="Введите имя задачи"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
                     />
 
-                    <label htmlFor="description">{t('create_task.description')}</label>
+                    <label htmlFor="description">{t('create_task.discript')}</label>
                     <textarea
                         id="description"
                         rows={3}
@@ -100,7 +107,6 @@ const TaskModalWindow: React.FC<ModalWindow2Props> = ({isOpen, onClose}) => {
                         className="selector"
                         onChange={(e) => setPriority(e.target.value as 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW')}
                     >
-                        <option value="CRITICAL">{t('create_task.priority_critical')}</option>
                         <option value="HIGH">{t('create_task.priority_high')}</option>
                         <option value="MEDIUM">{t('create_task.priority_medium')}</option>
                         <option value="LOW">{t('create_task.priority_low')}</option>
@@ -114,7 +120,6 @@ const TaskModalWindow: React.FC<ModalWindow2Props> = ({isOpen, onClose}) => {
                         onChange={(e) => setType(e.target.value as 'CREATE' | 'DELETE')}
                     >
                         <option value="CREATE">{t('create_task.type_create')}</option>
-                        <option value="DELETE">{t('create_task.type_delete')}</option>
                     </select>
 
                     <label htmlFor="deadline">{t('create_task.deadline')}</label>
@@ -124,6 +129,17 @@ const TaskModalWindow: React.FC<ModalWindow2Props> = ({isOpen, onClose}) => {
                         value={deadline}
                         onChange={(e) => setDeadline(e.target.value)}
                     />
+
+                    <label htmlFor="domain">{t('create_task.domain')}</label>
+                    <select
+                        id="domain"
+                        value={domain_id}
+                        className="selector"
+                        onChange={handleDomainChange}>
+                        {domains.map((domain) => (
+                            <option value={domain.id}>{domain.name}</option>
+                        ))}
+                    </select>
 
                     <label>{t('create_task.employees')}</label>
                     <ul>

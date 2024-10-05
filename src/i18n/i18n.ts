@@ -29,7 +29,12 @@ const resources = {
                 "deadline": "Deadline",
                 "save": "Save",
                 "domain": "Domain",
-                "type": "Type"
+                "type": "Type",
+                "type_create": "Create task",
+                "employees": "Employees",
+                "priority_low": "LOW",
+                "priority_medium": "MEDIUM",
+                "priority_high": "HIGH"
             },
             "create_vacancy": {
                 "create": "Create vacancy",
@@ -120,7 +125,13 @@ const resources = {
                 "deadline": "Дедлайн",
                 "save": "Сохранить",
                 "domain": "Домен",
-                "type": "Тип"
+                "type": "Тип",
+                "type_create": "Создать задачу",
+                "employees": "Сотрудники",
+                "priority_low": "НИЗКИЙ",
+                "priority_medium": "СРЕДНИЙ",
+                "priority_high": "ВЫСОКИЙ"
+
             },
             "create_vacancy": {
                 "create": "Создать вакансию",
