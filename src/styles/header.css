@@ -1,0 +1,74 @@
+.header {
+    display: flex; /* Используем Flexbox для выравнивания */
+    justify-content: space-between; /* Распределяем элементы по краям */
+    align-items: center; /* Вертикально выравниваем элементы */
+    /*position: fixed; !* Фиксируем шапку в верхней части страницы *!*/
+    top: 0;
+    left: 0;
+    width: 100%; /* Занимает всю ширину экрана */
+    height: 6vw; /* Высота шапки */
+    padding: 0 1vw; /* Отступы слева и справа */
+    gap: 10vw
+}
+
+.menu-button {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-left: 2vw;
+    height: 5vh; /* Высота кнопки соответствует высоте шапки */
+    margin-right: 20px; /* Отступ между кнопкой и переключателем языка */
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F0F0F0;
+    border-radius: 15px;
+    padding: 2vh 1vw 0.5vh 1vw;
+    height: 3vh;
+    width: 35vw;
+    text-align: center;
+}
+
+.search-input {
+    background-color: transparent;
+    border: none;
+    color: #8F8D94;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #BFBFC2;
+}
+
+
+.tech-logo {
+    height: 5vh; /* Размер логотипа */
+    margin-right: 5vw;
+    margin-left: auto; /* Сдвигаем логотип вправо */
+}
+
+.language-switcher {
+    background: linear-gradient(270deg, #8D67D5 0.01%, #5C2FC2 100%);
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 15px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    margin: 10px 0; /* Margin for spacing */
+}
+
+.language-switcher:hover {
+    background: linear-gradient(270deg, #371C75 0.01%, #371C75 100%);
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.language-switcher:focus {
+    outline: none; /* Remove default focus outline */
+}

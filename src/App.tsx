@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import Menu from "./pages/Menu";
+import MainPage from "./pages/MainPage";
+import "./App.css"
+import {Route, Routes} from "react-router-dom"
+import DomainPage from "./pages/DomainAnalysis";
+import VacanciesPage from "./pages/VacanciesPage";
+import Workspace from "./pages/Workspace";
+import TaskPage from "./pages/TasksPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => {
+    const [isMenuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen((prev) => !prev);
+    };
+
+    return (
+        <div className="App">
+            <Menu isOpen={isMenuOpen} toggleMenu={toggleMenu}/>
+
+            <Routes>
+                <Route path="/" element={<MainPage toggleMenu={toggleMenu}/>}/>
+                <Route path="/domain" element={<DomainPage toggleMenu={toggleMenu}/>}/>
+                <Route path="/vacancies" element={<VacanciesPage toggleMenu={toggleMenu}/>}/>
+                <Route path="/userworkspace" element={<Workspace toggleMenu={toggleMenu}/>}/>
+                <Route path="/usertasks" element={<TaskPage toggleMenu={toggleMenu}/>}/>
+            </Routes>
+        </div>
+    );
+};
 
 export default App;

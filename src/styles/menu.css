@@ -1,0 +1,45 @@
+.menu {
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 30vw;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    z-index: 1;
+}
+
+.menu-button-opened {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    background-image: none;
+}
+
+.main-names {
+    font-size: 2vw;
+    margin: 1.5vh;
+}
+
+.sub-names {
+    font-size: 1.8vw;
+    margin: 1.5vh;
+}
+
+.custom-link {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: inherit; /* Наследуем цвет от родителя или устанавливаем свой */
+}
+
+/* Если хочешь задать другой цвет ссылке, используй */
+.custom-link {
+    color: inherit; /* Белый или другой цвет по твоему выбору */
+}
+
+.custom-link:visited {
+    color: inherit; /* Цвет после посещения ссылки */
+}
+
+
+

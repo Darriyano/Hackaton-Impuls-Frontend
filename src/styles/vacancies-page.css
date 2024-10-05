@@ -1,0 +1,94 @@
+.vacancies-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 3vw; /* Отступ слева */
+    width: 100%;
+    gap: 1vh
+}
+
+.all-in-all-container {
+    padding-top: 3vw; /* Same height as the header to prevent overlap */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh
+}
+
+.vacancies-container {
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    left: 3vw; /* Отступ слева */
+
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1vh;
+}
+
+.headline {
+    font-size: 2vw;
+    margin-left: 3vw; /* Отступ слева */
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.table-buts {
+    background-color: #F3F3F3;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.table-buts img {
+    margin-right: 10px;
+}
+
+.vacancies-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.vacancies-table thead th {
+    text-align: center;
+    padding: 15px;
+    background-color: #F3F3F3;
+    border-bottom: 1px solid #F3F3F3;
+    color: #000000;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.vacancies-table tbody td {
+    padding: 15px;
+    border-bottom: 1px solid #444;
+    font-size: 14px;
+}
+
+.vacancies-table tbody tr:last-child td {
+    border-bottom: none;
+}

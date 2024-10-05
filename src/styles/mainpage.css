@@ -1,0 +1,52 @@
+.mainpage-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.all-in-all-container {
+    padding-top: 3vw; /* Same height as the header to prevent overlap */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh
+}
+
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 3vw; /* Отступ слева */
+    width: 100%;
+    gap: 1vh
+}
+
+.buttons-container {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    position: relative;
+    left: 3vw; /* Отступ слева */
+}
+
+.analysis {
+    font-size: 2.5vw;
+}
+
+.naming {
+    display: flex;
+    flex-direction: row;
+    font-size: 2vw;
+    gap: 1vw
+}
+
+.create-button {
+    padding: 2vh 3vw 2vh 3vw;
+    border: 2px solid #6A0DAD;
+    border-radius: 20px;
+    background: none;
+    cursor: pointer;
+    font-size: 1.5vw;
+}

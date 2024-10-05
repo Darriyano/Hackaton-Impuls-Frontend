@@ -1,0 +1,117 @@
+/* Основной контейнер, объединяющий таблицы и блок подчинённых */
+.content-container {
+    display: flex;
+    justify-content: space-between; /* Раздвигаем элементы по краям */
+    width: 100%;
+}
+
+/* Контейнер для таблиц */
+.tables-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 70vw; /* Ширина таблиц */
+    margin-left: 3vw;
+}
+
+/* Контейнер для таблицы */
+.table-wrapper {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовок таблицы */
+.table-wrapper h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #4B4B4B;
+}
+
+/* Таблица */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #F8F8F8;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.custom-table th, .custom-table td {
+    padding: 15px;
+    text-align: left;
+    font-size: 14px;
+    color: #4B4B4B;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.custom-table th {
+    font-weight: bold;
+    color: #A0A0A0;
+}
+
+.custom-table tbody tr:last-child td {
+    border-bottom: none; /* Убираем границу для последней строки */
+}
+
+/* Блок с подчинёнными */
+.subordinates-container {
+    width: 20vw;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-left: auto; /* Прижимаем к правому краю */
+}
+
+.subordinates-container h2 {
+    font-size: 18px;
+    color: #4B4B4B;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.subordinate-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.subordinate-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.buttons-container2 {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    position: relative;
+    margin-top: 3vh;
+}
+
+.subordinate-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-size: 14px;
+    color: #232323;
+    font-weight: bold;
+}
+
+.position {
+    font-size: 12px;
+    color: #A0A0A0;
+}
+
+.arrow {
+    font-size: 18px;
+    color: #5F99CF;
+}
